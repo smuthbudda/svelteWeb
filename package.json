@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@prisma/client": "^4.16.2",
 		"@supabase/supabase-js": "^2.26.0",
 		"linq": "^4.0.1",
 		"pocketbase": "^0.15.2"

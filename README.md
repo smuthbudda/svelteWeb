@@ -30,3 +30,5 @@ You can preview the production build with `npm run preview`.
 https://www.prisma.io/blog/sveltekit-prisma-kvCOEoeQlC#prerequisites
 
 https://vercel.com/guides/nextjs-prisma-postgres
+
+npx prisma studio to run the prisma studio

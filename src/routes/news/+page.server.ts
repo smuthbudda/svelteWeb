@@ -25,3 +25,20 @@
 //         news:dtos ?? [],
 //     };
 // }
+
+
+import prisma from '../../lib/prisma';
+
+export async function load(){
+    const feed = await prisma.post.findMany({
+        where: { published: true },
+        include: {
+            author: {
+                select: { name: true },
+            },
+        },
+    });
+    return {
+        news: feed
+    };
+};
