@@ -24,3 +24,9 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+
+<!-- Might follow this after  -->
+https://www.prisma.io/blog/sveltekit-prisma-kvCOEoeQlC#prerequisites
+
+https://vercel.com/guides/nextjs-prisma-postgres

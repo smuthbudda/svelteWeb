@@ -1,31 +1,31 @@
-<script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+<script lang="ts">
+	import Counter from "./Counter.svelte";
+	import Tile from "../components/Tile.svelte"
+	import { onMount, beforeUpdate, afterUpdate, onDestroy } from "svelte";
+	import { SeedDataBase } from "../db/mockdb";
+	import type { NewsArticle, Athlete } from "../dataObjects/objects";
+	export let data;
+	let athletes: Athlete[] = [];
+	let articles: NewsArticle[] = [];
+	let loading = true;
+	let _db = new SeedDataBase();
+	onMount(() => {
+		athletes = _db.GenAthletes(10);
+		articles = _db.GenNewsArticles(4);
+	});
 </script>
 
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="Home Page" content="Home page content" />
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+	<article class="home__news">
+		{#each articles as article, index}
+			<Tile article={article}/>
+		{/each}
+	</article>
 </section>
 
 <style>
@@ -37,6 +37,14 @@
 		flex: 0.6;
 	}
 
+	article.home__news {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		width: 100%;
+	}
+	
+	
 	h1 {
 		width: 100%;
 	}
