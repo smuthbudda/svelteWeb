@@ -1,5 +1,5 @@
 <script >
-	export let data;
+	//export let data;
 </script>
 
 <svelte:head>
@@ -9,7 +9,7 @@
 
 
 <ul>
-    {#each data.news as country}
+    <!-- {#each data.news as article}
       <li></li>
-    {/each}
+    {/each} -->
   </ul>
