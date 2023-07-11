@@ -19,6 +19,7 @@ model Post {
   published Boolean @default(false)
   author    User?   @relation(fields: [authorId], references: [id])
   authorId  String?
+  dateCreated DateTime? @default(now()) @map(name: "dateCreated")
 }
 
 model User {

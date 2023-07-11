@@ -9,7 +9,8 @@ export class NewsArticle {
     public id!: number;
     public title!: string;
     public content!: Uint8Array[]; //a type for storing images
-    public dateCreated!: Date;
+    public dateCreated: Date|null;
+    public authorID?: string|null;
 }
 
 
