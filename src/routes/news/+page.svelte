@@ -1,7 +1,8 @@
 
 <script lang="ts">
-  import type { User } from '@prisma/client'
-	export let data:User;
+  import type { User, Post } from '@prisma/client'
+	export let data:Post;
+  
 </script>
 
 <svelte:head>
@@ -11,7 +12,7 @@
 
 
 <ul>
-    {#each data.news as article}
+    {#each data.News as article}
       <li>Title: {article.title} content: {article.content} </li>
     {/each}
-  </ul>
+</ul>

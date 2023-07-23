@@ -1,6 +1,5 @@
-import type { NewsArticle } from "../../dataObjects/objects";
-import Enumerable from 'linq';
 import prisma from '../../lib/prisma';
+
 export const prerender = false;
 
 export async function load(){
@@ -12,7 +11,8 @@ export async function load(){
             },
         },
     });
+    console.log(feed);
     return {
-        news: feed
+        News: feed
     };
 };
