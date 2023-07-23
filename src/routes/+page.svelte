@@ -4,7 +4,6 @@
 	import { onMount, beforeUpdate, afterUpdate, onDestroy } from "svelte";
 	import { SeedDataBase } from "../db/mockdb";
 	import type { NewsArticle, Athlete } from "../dataObjects/objects";
-	export let data;
 	let athletes: Athlete[] = [];
 	let articles: NewsArticle[] = [];
 	let loading = true;
